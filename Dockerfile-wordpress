@@ -1,0 +1,11 @@
+FROM wordpress:latest
+
+
+ENV WORDPRESS_DB_HOST=mysql-container
+ENV WORDPRESS_DB_USER=root
+ENV WORDPRESS_DB_PASSWORD=password
+ENV WORDPRESS_DB_NAME=wordpress
+
+
+CMD ["apache2-foreground"]
+

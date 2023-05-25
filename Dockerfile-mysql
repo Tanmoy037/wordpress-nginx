@@ -1,8 +1,6 @@
-# Base image for MySQL
 FROM mysql:5.7
 
-# Set the MySQL root password (change "password" to your desired password)
 ENV MYSQL_ROOT_PASSWORD=password
 
-# Start MySQL service
+
 CMD ["mysqld", "--user=root"]

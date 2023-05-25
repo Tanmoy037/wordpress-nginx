@@ -1,18 +1,18 @@
-# Base image for Nginx
+
 FROM openresty/openresty:alpine
 
-# Set OpenResty version
+
 ENV OPENRESTY_VERSION=1.19.3.1
 
-# Install required packages
+
 RUN apk add --no-cache openssl perl build-base postgresql-dev pcre-dev zlib-dev
 
-# Download and extract OpenResty source code
+
 RUN wget https://openresty.org/download/openresty-$OPENRESTY_VERSION.tar.gz && \
     tar -xzf openresty-$OPENRESTY_VERSION.tar.gz && \
     rm openresty-$OPENRESTY_VERSION.tar.gz
 
-# Build and install OpenResty with Lua support
+
 RUN cd openresty-$OPENRESTY_VERSION && \
     ./configure --prefix=/opt/openresty \
                 --with-pcre-jit \
@@ -26,12 +26,12 @@ RUN cd openresty-$OPENRESTY_VERSION && \
     cd .. && \
     rm -rf openresty-$OPENRESTY_VERSION
 
-# Copy the Nginx configuration file
+
 COPY nginx.conf /etc/nginx/default.conf
 
-# Expose ports
+
 EXPOSE 80
 EXPOSE 443
 
-# Start Nginx service
+
 CMD ["/opt/openresty/nginx/sbin/nginx", "-g", "daemon off;"]
