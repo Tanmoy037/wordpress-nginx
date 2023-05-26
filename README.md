@@ -2,7 +2,7 @@
 
 We are creating a docker network for running all the images in same network -
 
-'''docker network create wordpress-network'''
+''docker network create wordpress-network''
 
 docker build -t wordpress-image -f Dockerfile-wordpress .
 
