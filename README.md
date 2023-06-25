@@ -18,3 +18,9 @@ For running the WordPress container -
 For running the Nginx Container - 
 ``` docker run --name nginx -p 80:80 --link wordpress nginx-image ```
 
+![Screenshot (349)](https://github.com/Tanmoy037/wordpress-nginx/assets/108757431/d0a57a64-b01e-49fa-872b-cb847029c536)
+
+
+![Screenshot (350)](https://github.com/Tanmoy037/wordpress-nginx/assets/108757431/0a7976a2-16de-4467-a8ed-a62f00fd33c0)
+
+
